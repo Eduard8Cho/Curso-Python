@@ -36,3 +36,5 @@ while opc!=6:
         pass
     else:
         print('Dato no valido')
+
+        
