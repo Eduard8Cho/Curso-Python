@@ -13,28 +13,42 @@ Nombre=[]
 Edad=[]
 Carrera=[]
 Promedios=[]
+numcuenta=[]
 
 while opc!=6:
     print(menu)
     opc=int(input('Digita una opcion:'))
 
     if opc==1:
+        numcuenta.append(len(numcuenta)+1)
         Nombre.append(input('Nombre:'))
         Edad.append(int(input('Edad:')))
         Carrera.append(input('Carrera:'))
-        Promedios.append(int(input('Promedio:')))
+        Promedios.append(float(input('Promedio:')))
     elif opc==2:
         pass
     elif opc==3:
-        pass
+        nC=int(input('Id del usuario:'))
+        existe=False
+        for  i in range(0,len(numcuenta)):
+            if numcuenta[i]==nC:
+                existe=True
+                break
+            
+        if existe:
+            print('{:<5d}{:<20s}{:<5d}{:<10s}{:<15.2f}'.format(
+                numcuenta[i],Nombre[i],Edad[i],Carrera[i],Promedios[i]))
+        else:
+            print(nC,'No existe') 
+
     elif opc==4:
         pass
     elif opc==5:
         for i in range(0,len(Nombre)):
-            print((Nombre[i],Edad[i],Carrera[i],Promedios[i]))
+            print('{:<5d}{:<20s}{:<5d}{:<10s}{:<15.2f}'.format(
+                numcuenta[i],Nombre[i],Edad[i],Carrera[i],Promedios[i]))
     elif opc==6:
         pass
     else:
         print('Dato no valido')
 
-        
